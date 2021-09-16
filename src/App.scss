@@ -20,9 +20,8 @@
     margin: 20px auto;
     background-color: rgba(221, 221, 221, 0.322);
     border: 1px solid black;
-
     header {
-        width: 1fr;
+        width: 1000px;
         min-height: 70px;
         background-color: rgb(153, 153, 153);
         display: flex;
@@ -54,16 +53,21 @@
         }
     }
     main {
-        width: inherit;
-        height: max-content;
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-
-        .not-items {
-            min-height: auto;
-            font-size: 30px;
-            margin: 100px;
+        .items {
+            z-index: 100;
+            width: inherit;
+            height: max-content;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            .not-items {
+                min-height: auto;
+                font-size: 30px;
+                margin: 100px;
+            }
+        }
+        .item-details {
+            z-index: 200;
         }
     }
 }

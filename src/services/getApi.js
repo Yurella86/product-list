@@ -10,6 +10,7 @@ export default class QueryService {
         }
         return await response.json();
     }
+
     async postData(item) {
         const response = await fetch(`${this._apiBase}`, {
             method: 'POST',
@@ -22,5 +23,11 @@ export default class QueryService {
             throw new Error(`Not fetch products`)
         }
         return await response.json();
+    }
+
+    async getComments(id) {
+        const response = await fetch(`${this._apiBase}/${id}/coments`);
+        const body = await response.json()
+        return body
     }
 }

@@ -1,6 +1,7 @@
+import { NavLink } from "react-router-dom";
 import "./item.scss"
 
-function Item({ imageUrl, name, count, description }) {
+function Item({ id, imageUrl, name, count, description, callbackIdItem }) {
     return (
         <div className="item">
 
@@ -16,8 +17,8 @@ function Item({ imageUrl, name, count, description }) {
                 <div className="description">
                     Description: <span>{description}</span>
                 </div>
-                <button className="button-item">
-                    Details
+                <button className="button-item" >
+                    <NavLink to={`/product/${id}`} onClick={() => callbackIdItem(id)}>Details</NavLink>
                 </button>
             </div>
 

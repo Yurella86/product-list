@@ -1,0 +1,18 @@
+.comment-box {
+    min-height: 20px;
+    border: 1px solid black;
+    border-radius: 3px;
+    margin-bottom: 15px;
+    background-color: white;
+    .header-comment {
+        width: 100%;
+        min-height: 20px;
+        text-align: end;
+        font-size: 12px;
+    }
+    .coment-description {
+        font-size: 14px;
+        line-height: 14px;
+        padding: 5px;
+    }
+}
