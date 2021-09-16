@@ -1,0 +1,69 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+.popup {
+    &.false {
+        display: none;
+    }
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.582);
+    z-index: 200;
+    top: 0;
+    left: 0;
+}
+.wrapper-products {
+    max-width: 1000px;
+    height: max-content;
+    margin: 20px auto;
+    background-color: rgba(221, 221, 221, 0.322);
+    border: 1px solid black;
+
+    header {
+        width: 1fr;
+        min-height: 70px;
+        background-color: rgb(153, 153, 153);
+        display: flex;
+        justify-content: space-around;
+        div {
+            min-width: 50px;
+            margin: auto;
+            label {
+                padding: 10px;
+            }
+            input {
+                height: 20px;
+                outline: none;
+                border: none;
+            }
+            button {
+                width: max-content;
+                padding: 5px;
+                height: 30px;
+                &:hover {
+                    color: white;
+                    background-color: black;
+                }
+            }
+        }
+        select {
+            border: none;
+            height: 20px;
+        }
+    }
+    main {
+        width: inherit;
+        height: max-content;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        .not-items {
+            min-height: auto;
+            font-size: 30px;
+            margin: 100px;
+        }
+    }
+}

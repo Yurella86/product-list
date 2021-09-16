@@ -1,0 +1,56 @@
+.item {
+    width: 170px;
+    margin: 10px;
+    padding-bottom: 5px;
+    height: 500px;
+    border: 1px solid black;
+    border-radius: 5px;
+    flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
+    .item-img {
+        width: 100%;
+        height: max-content;
+        position: absolute;
+
+        img {
+            width: inherit;
+            height: auto;
+            object-fit: contain;
+            object-position: center;
+        }
+    }
+    .item-description {
+        position: absolute;
+        width: inherit;
+        top: 180px;
+        text-align: center;
+        h3 {
+            width: 100%;
+            text-align: center;
+        }
+        .pieces {
+            font-size: 12px;
+            font-weight: 700;
+            margin: 10px;
+            span {
+                color: rgb(143, 3, 3);
+                font-size: 16px;
+            }
+        }
+        .description {
+            font-size: 14px;
+            font-weight: 700;
+            span {
+                font-weight: 500;
+                padding: 5px;
+            }
+        }
+        .button-item {
+            &:hover {
+                color: white;
+                background-color: black;
+            }
+        }
+    }
+}

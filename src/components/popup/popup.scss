@@ -1,0 +1,58 @@
+.popup-wrapper {
+    width: 400px;
+    height: 280px;
+    margin: 200px auto;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    header {
+        display: flex;
+        justify-content: flex-end;
+        span {
+            display: block;
+            text-align: center;
+            width: 14px;
+            height: 16px;
+            line-height: 11px;
+            margin: 5px 10px;
+            font-size: 20px;
+            font-weight: 500;
+            border-radius: 4px;
+            &:hover {
+                font-weight: 700;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+        }
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        align-items: center;
+        width: 300px;
+        margin: 0 auto;
+        &:last-child {
+            outline: none;
+        }
+        div {
+            width: 100%;
+            margin: 5px auto;
+            input {
+                outline: 1px solid black;
+                border: none;
+                width: 100%;
+            }
+        }
+    }
+    .buttons {
+        height: 30px;
+        margin: 0 50px;
+        text-align: center;
+        button {
+            margin: 0 20px;
+            width: 70px;
+        }
+    }
+}
