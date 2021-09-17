@@ -37,15 +37,18 @@ function App() {
     setPopup(!popup)
   }
 
+  function delItem(id) {
+    dataApi.deleteItem(id)
+    setArrayItems(arrayItems.filter((el) => el.id !== id))
+  }
+
   useEffect(() => {
     if (directionPriseFilter === "smaller") {
       console.log(directionPriseFilter);
       setArrayItems(arrayItems.sort((a, b) => a.count - b.count))
-      console.log(arrayItems)
     } else if (directionPriseFilter === "larger") {
       console.log(directionPriseFilter);
       setArrayItems(arrayItems.sort((a, b) => b.count - a.count))
-      console.log(arrayItems)
     }
   }, [changeDirectionPrise])
 
@@ -54,7 +57,7 @@ function App() {
       .then((body) => {
         setArrayItems(body)
       })
-  }, [popup, !popup])
+  }, [popup])
 
   useEffect(() => {
     dataApi.getData()
@@ -106,7 +109,8 @@ function App() {
                       name={el.name}
                       count={el.count}
                       description={el.description}
-                      callbackIdItem={(id) => setIdItemOpen(id)} />) :
+                      callbackIdItem={(id) => setIdItemOpen(id)}
+                      callbackdelItem={(id) => delItem(id)} />) :
                     <div className="not-items">
                       Not found
                     </div> :
@@ -117,7 +121,8 @@ function App() {
                     name={el.name}
                     count={el.count}
                     description={el.description}
-                    callbackIdItem={(id) => setIdItemOpen(id)} />)
+                    callbackIdItem={(id) => setIdItemOpen(id)}
+                    callbackdelItem={(id) => delItem(id)} />)
                 }
               </div>
             </Route>

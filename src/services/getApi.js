@@ -30,4 +30,15 @@ export default class QueryService {
         const body = await response.json()
         return body
     }
+
+
+    async deleteItem(id) {
+        const response = await fetch(`${this._apiBase}/${id}`, {
+            method: 'DELETE',
+        });
+        if (!response.ok) {
+            throw new Error(`Not fetch products`)
+        }
+        return await response.json();
+    }
 }
