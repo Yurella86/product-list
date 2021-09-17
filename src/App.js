@@ -44,10 +44,8 @@ function App() {
 
   useEffect(() => {
     if (directionPriseFilter === "smaller") {
-      console.log(directionPriseFilter);
       setArrayItems(arrayItems.sort((a, b) => a.count - b.count))
     } else if (directionPriseFilter === "larger") {
-      console.log(directionPriseFilter);
       setArrayItems(arrayItems.sort((a, b) => b.count - a.count))
     }
   }, [changeDirectionPrise])
