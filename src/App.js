@@ -129,16 +129,18 @@ function App() {
             <Route path={`/product/${idItemOpen}`}>
               <div className="item-details">
                 {idItemOpen ?
-                  <DetailsItem
-                    key={arrayItems[idItemOpen - 1]}
-                    id={arrayItems[idItemOpen - 1].id}
-                    imageUrl={arrayItems[idItemOpen - 1].imageUrl}
-                    name={arrayItems[idItemOpen - 1].name}
-                    count={arrayItems[idItemOpen - 1].count}
-                    color={arrayItems[idItemOpen - 1].color}
-                    size={arrayItems[idItemOpen - 1].size}
-                    weight={arrayItems[idItemOpen - 1].weight}
-                    description={arrayItems[idItemOpen - 1].description} /> : null}
+                  arrayItems.filter(el => el.id === idItemOpen)
+                    .map((el) => <DetailsItem
+                      id={el.id}
+                      imageUrl={el.imageUrl}
+                      name={el.name}
+                      count={el.count}
+                      color={el.color}
+                      size={el.size}
+                      weight={el.weight}
+                      description={el.description}
+                    />
+                    ) : null}
               </div>
             </Route>
           </main>
